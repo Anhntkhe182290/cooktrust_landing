@@ -28,3 +28,28 @@ setInterval(() => {
 
     index = (index + 1) % items.length;
 }, 2500);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.getElementById("nav-toggle");
+  const nav = document.getElementById("nav");
+
+  navToggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+
+    // đổi icon
+    if (nav.classList.contains("active")) {
+      navToggle.textContent = "✖"; // khi mở menu
+    } else {
+      navToggle.textContent = "☰"; // khi đóng menu
+    }
+  });
+
+  // tự động đóng menu khi click vào link
+  document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      navToggle.textContent = "☰";
+    });
+  });
+});
