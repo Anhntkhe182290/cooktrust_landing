@@ -29,7 +29,7 @@ body {
 
 /* ================= HEADER ================= */
 .header {
-    background-color: #D9D9D9;
+    background-color: #fff;
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -315,4 +315,72 @@ body {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .core-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tips-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mặc định desktop */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    /* logo bên trái, toggle/nav bên phải */
+    align-items: center;
+}
+
+/* Nút hamburger */
+.nav-toggle {
+    display: none;
+    /* ẩn trên desktop */
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #3E613A;
+    margin-left: auto;
+    /* đẩy sang phải */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #D9D9D9;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
 }
