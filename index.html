@@ -1,210 +1,365 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cook Trust – Healthy & Eat Clean Food</title>
-    <link rel="stylesheet" href="./css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cook Trust - Healthy & Eat Clean Food</title>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
-
 <body id="top">
-    <!-- ================= HEADER ================= -->
-    <header class="header" id="hero">
-        <div class="container header-inner">
-            <a href="#top" class="logo">
-                <img src="assets/logo.png" alt="Cook Trust Logo">
-                <span>Cook Trust</span>
-            </a>
+  <header class="header" id="hero">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <img src="assets/logo.png" alt="Cook Trust Logo" />
+        <span>Cook Trust</span>
+      </a>
 
-            <button class="nav-toggle" id="nav-toggle"> ☰ </button>
-            
-            <!-- NAV -->
-            <nav class="nav" id="nav">
-                <a href="#intro">Giới thiệu</a>
-                <a href="#menu">Menu</a>
-                <a href="#why">Chia sẻ</a>
-            </nav>
+      <button class="nav-toggle" id="nav-toggle">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#intro">Giới thiệu</a>
+        <a href="#menu">Menu</a>
+        <a href="#why">Chia sẻ</a>
+        <div class="auth-top" id="auth-top">
+          <button class="btn primary" id="google-login-btn" type="button">Login GG</button>
+          <div class="user-menu hidden" id="user-menu">
+            <button class="avatar-btn" id="avatar-btn" type="button" aria-label="Open account menu">
+              <img id="user-avatar" alt="avatar" />
+            </button>
+            <div class="user-dropdown hidden" id="user-dropdown">
+              <p id="user-name"></p>
+              <p id="user-google-id"></p>
+              <button class="dropdown-item" id="view-history-btn" type="button">Lịch sử đơn hàng</button>
+              <button class="dropdown-item" id="open-settings-btn" type="button">Cài đặt</button>
+              <button class="dropdown-item danger" id="logout-menu-btn" type="button">Đăng xuất</button>
+            </div>
+          </div>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
-    <!-- ================= INTRO SECTION ================= -->
-    <section class="section intro" id="intro">
-        <div class="container">
-            <h1 class="intro-title">“Khi bữa ăn là lời nhắn yêu thương”</h1>
-
-            <div class="intro-images">
-                <img src="assets/banner.png">
-                <img src="assets/banner1.png">
-                <img src="assets/banner2.png">
-                <img src="assets/banner3.png">
-                <img src="assets/banner4.png">
-            </div>
-
-            <p class="intro-desc">
-                Eat Clean không chỉ để khỏe – mà còn để yêu thương đúng cách.
-            </p>
+  <section class="section intro" id="intro">
+    <div class="container">
+      <h1 class="intro-title">"Khi bữa ăn là lời nhắn yêu thương"</h1>
+      <div class="intro-images">
+        <div class="intro-item active">
+          <iframe
+            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%2F%3Ffbid%3D122111115705219621%26set%3Da.122107461963219621&show_text=true&width=320"
+            width="320" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
-    </section>
-
-    <!-- ================= MENU SECTION ================= -->
-    <section class="section menu" id="menu">
-        <div class="container">
-            <h2>Menu cố định hằng ngày</h2>
-
-            <!-- Danh sách món ăn -->
-            <div class="menu-list">
-                <!-- CARD 1 -->
-                <div class="menu-card">
-                    <!-- Ảnh món ăn -->
-                    <img src="assets/menu1.jpg">
-                    <h3>Combo 1: Ức gà áp chảo + Cơm gạo lứt + Súp lơ xanh luộc</h3>
-                    <p>45.000 VND</p>
-                </div>
-
-                <!-- CARD 2 -->
-                <div class="menu-card">
-                    <img src="assets/menu2.jpg">
-                    <h3>Combo 2: Cá phi lê áp chảo + Cơm gạo lứt + Súp lơ luộc</h3>
-                    <p>55.000 VND</p>
-                </div>
-
-                <!-- CARD 3 -->
-                <div class="menu-card">
-                    <img src="assets/menu3.jpg">
-                    <h3>Combo 3: Thịt bò xào súp lơ + Cơm gạo lứt + Bắp cải luộc</h3>
-                    <p>45.000 VND</p>
-                </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="menu-actions">
-
-                <div class="messenger-link">
-                    <a class="btn primary" href="https://www.messenger.com/t/61586588653121?locale=vi_VN"
-                        target="_blank">
-                        <img src="assets/face.jpg">
-                        Đặt hàng ngay
-                    </a>
-                </div>
-
-                <!-- HOTLINE -->
-                <div class="hotline">
-                    <button class="btn outline" id="copy-phone">
-                        <img src="assets/hotline.jpg" alt="phone icon">
-                        096 572 25 51
-                    </button>
-                </div>
-            </div>
-    </section>
-
-    <!-- ================= WHY SECTION ================= -->
-    <section class="section why" id="why">
-        <div class="container">
-            <h2>Vì sao “Healthy & Eat Clean Food” ra đời?</h2>
-
-            <p>
-                Thấu hiểu những băn khoăn khi bắt đầu ăn healthy, chúng tôi ở đây để giúp
-                sinh viên và người trẻ tại Hoà Lạc ăn lành mạnh dễ hơn và tiết kiệm thời
-                gian hơn mỗi ngày.
-            </p>
-            <p>
-                CookTrust - Healthy & Eat Clean Food mang đến giải pháp eat clean phù hợp,
-                không cầu kỳ nhưng vẫn đảm bảo dinh dưỡng cần thiết. Với chúng tôi, mỗi bữa
-                ăn phải là một trải nghiệm có cảm xúc, để việc ăn healthy không còn khô khan,
-                mà trở thành một thói quen dễ duy trì và một phần tự nhiên trong lối sống lành
-                mạnh của bạn.
-            </p>
+        <div class="intro-item">
+          <iframe
+            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%2F%3Ffbid%3D122111770695219621%26set%3Dpcb.122111771013219621&show_text=true&width=320"
+            width="320" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
-    </section>
-
-    <!-- ================= CORE SECTION ================= -->
-    <section class="section core">
-        <div class="container">
-            <h2>Tính năng cốt lõi</h2>
-
-            <div class="core-list">
-                <div class="core-card">
-                    <img src="assets/core1.jpg">
-                    <h3>Menu đa dạng</h3>
-                </div>
-
-                <div class="core-card">
-                    <img src="assets/core2.jpg">
-                    <h3>Chia sẻ dinh dưỡng</h3>
-                </div>
-
-                <div class="core-card">
-                    <img src="assets/core3.jpg">
-                    <h3>AI cá nhân hóa</h3>
-                </div>
-
-                <div class="core-card">
-                    <img src="assets/core4.jpg">
-                    <h3>Nhân đôi yêu thương</h3>
-                </div>
-            </div>
+        <div class="intro-item">
+          <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61586588653121&tabs=timeline&width=320&height=420&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="320" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
-    </section>
+      </div>
+      <p class="intro-desc">Eat Clean không chỉ để khỏe mà còn để yêu thương đúng cách.</p>
+    </div>
+  </section>
 
-    <!-- ================= MINI TIPS ================= -->
-    <section class="section tips">
-        <div class="container">
-            <h2>Mini Tips</h2>
+  <section class="section menu" id="menu">
+    <div class="container">
+      <h2>Menu cố định hằng ngày</h2>
 
-            <div class="tips-list">
-                <div class="tip-card">
-                    <img src="assets/tips1.jpg">
-                    <p>Không có cân, không có app – vẫn ăn healthy?</p>
-                    <a href="#why">Đọc tiếp</a>
-                </div>
-
-                <div class="tip-card">
-                    <img src="assets/tips2.jpg">
-                    <p>Vì sao ăn healthy mà vẫn tăng cân?</p>
-                    <a href="#why">Đọc tiếp</a>
-                </div>
-
-                <div class="tip-card">
-                    <img src="assets/tips3.jpg">
-                    <p>Thế nào là một bữa ăn “đủ chất”?</p>
-                    <a href="#why">Đọc tiếp</a>
-                </div>
-            </div>
-
-            <div id="blog-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close-btn">&times;</span>
-                    <div id="modal-body">
-                    </div>
-                    <button class="btn primary" id="back-btn">Quay lại</button>
-                </div>
-            </div>
+      <div class="menu-list menu-list-top">
+        <div class="menu-card combo-card featured-card" data-combo-name="menu1" data-price="45000">
+          <span class="menu-badge must-try">Must Try</span>
+          <img src="assets/menu1.png" alt="menu1" />
+          <h3>Ức gà áp chảo + Cơm gạo lứt + Bông cải</h3>
+          <p>Giá: 45.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
         </div>
-    </section>
 
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div>
-                <h4>Về chúng tôi</h4>
-                <p>CookTrust – Healthy & Eat Clean Food là dự án ẩm thực lành mạnh
-                    do đội ngũ sinh viên ĐH FPT xây dựng hướng tới sinh viên,
-                    người đi làm trẻ và người tập gym tại khu vực Hòa Lạc</p>
-                <p>Gmail: cooktrusteatcleanfood@gmail.com</p>
-                Fanpage: <a href="https://www.facebook.com/profile.php?id=61586588653121" target="_blank">
-                    CookTrust - Healthy & Eat Clean Food</a> <br>
-                Tiktok: <a href="https://www.tiktok.com/@cooktrust4" target="_blank">
-                    @cooktrust4</a>
-            </div>
+        <div class="menu-card combo-card featured-card" data-combo-name="menu2" data-price="45000">
+          <span class="menu-badge best-seller">Best Seller</span>
+          <img src="assets/menu2.png" alt="menu2" />
+          <h3>Thịt bò xào nấm + Khoai lang + Rau xanh</h3>
+          <p>Giá: 45.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
         </div>
-    </footer>
 
+        <div class="menu-card combo-card" data-combo-name="menu3" data-price="45000">
+          <img src="assets/menu3.png" alt="menu3" />
+          <h3>Tôm hấp + Bún gạo lứt + Rau luộc</h3>
+          <p>Giá: 45.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
+        </div>
 
-    <!-- JS -->
-    <script src="./js/script.js"></script>
-    <script src="./js/animation.js"></script>
+        <div class="menu-card combo-card" data-combo-name="menu4" data-price="45000">
+          <img src="assets/menu4.png" alt="menu4" />
+          <h3>Trứng lòng đào + Đậu hũ non + Ức gà xé</h3>
+          <p>Giá: 45.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-list menu-list-bottom">
+        <div class="menu-card combo-card" data-combo-name="menu5" data-price="45000">
+          <img src="assets/menu5.png" alt="menu5" />
+          <h3>Ức gà xé trộn sốt mè rang + Khoai lang + Salad</h3>
+          <p>Giá: 45.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
+        </div>
+
+        <div class="menu-card combo-card" data-combo-name="menu6" data-price="45000">
+          <img src="assets/menu6.png" alt="menu6" />
+          <h3>Salad tôm trứng</h3>
+          <p>Giá: 45.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
+        </div>
+
+        <div class="menu-card combo-card" data-combo-name="menu7" data-price="45000">
+          <img src="assets/menu7.png" alt="menu7" />
+          <h3>Gỏi cuốn ức gà</h3>
+          <p>Giá: 45.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
+        </div>
+
+        <div class="menu-card combo-card" data-combo-name="combo7" data-price="280000">
+          <img src="assets/combo7.png" alt="combo7" />
+          <h3>Combo 7 ngày</h3>
+          <p>Giá: 280.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
+        </div>
+
+        <div class="menu-card combo-card" data-combo-name="lovebox" data-price="310000">
+          <img src="assets/lovebox.jpg" alt="lovebox" />
+          <h3>Love Box trao gửi yêu thương</h3>
+          <p>Giá: 310.000 VND</p>
+          <button class="menu-detail-btn" type="button">Chi tiết</button>
+          <div class="combo-controls">
+            <label class="combo-select-label"><input type="checkbox" class="combo-select" /> Chọn combo</label>
+            <label class="combo-qty-label">Số lượng <input type="number" class="combo-qty" min="1" value="1" disabled /></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-checkout-bar">
+        <p>Tổng tạm tính: <strong id="combo-total-price">0 VND</strong></p>
+        <button class="btn primary" id="open-checkout-btn" type="button">Thanh toán tổng</button>
+      </div>
+
+      <div class="menu-actions">
+        <div class="messenger-link">
+          <a class="btn primary" href="https://www.messenger.com/t/61586588653121?locale=vi_VN" target="_blank">
+            <img src="assets/face.jpg" alt="facebook" /> Tư vấn qua Messenger
+          </a>
+        </div>
+        <div class="hotline">
+          <button class="btn outline" id="copy-phone">
+            <img src="assets/hotline.jpg" alt="phone icon" /> 096 572 25 51
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why" id="why">
+    <div class="container">
+      <h2>Vì sao Healthy & Eat Clean Food ra đời?</h2>
+      <p>Thấu hiểu những băn khoăn khi bắt đầu ăn healthy, chúng tôi ở đây để giúp sinh viên và người trẻ tại Hòa Lạc ăn lành mạnh dễ hơn và tiết kiệm thời gian hơn mỗi ngày.</p>
+      <p>CookTrust mang đến giải pháp eat clean phù hợp, không cầu kỳ nhưng vẫn đảm bảo dinh dưỡng cần thiết.</p>
+    </div>
+  </section>
+
+  <section class="section core">
+    <div class="container">
+      <h2>Tính năng cốt lõi</h2>
+      <div class="core-list">
+        <div class="core-card"><img src="assets/core1.jpg" alt="core1" /><h3>Menu đa dạng</h3></div>
+        <div class="core-card"><img src="assets/core2.jpg" alt="core2" /><h3>Chia sẻ dinh dưỡng</h3></div>
+        <div class="core-card"><img src="assets/core3.jpg" alt="core3" /><h3>AI cá nhân hóa</h3></div>
+        <div class="core-card"><img src="assets/core4.jpg" alt="core4" /><h3>Nhân đôi yêu thương</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tips">
+    <div class="container">
+      <h2>Mini Tips</h2>
+      <div class="tips-list">
+        <div class="tip-card"><img src="assets/tips1.jpg" alt="tip1" /><p>Không có cân, không có app vẫn ăn healthy?</p><a href="#why">Đọc tiếp</a></div>
+        <div class="tip-card"><img src="assets/tips2.jpg" alt="tip2" /><p>Vì sao ăn healthy mà vẫn tăng cân?</p><a href="#why">Đọc tiếp</a></div>
+        <div class="tip-card"><img src="assets/tips3.jpg" alt="tip3" /><p>Thế nào là một bữa ăn đủ chất?</p><a href="#why">Đọc tiếp</a></div>
+      </div>
+
+      <div id="blog-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <div id="modal-body"></div>
+          <button class="btn primary" id="back-btn">Quay lại</button>
+        </div>
+      </div>
+
+      <div id="history-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="history-close-btn">&times;</span>
+          <h2>Lịch sử mua</h2>
+          <div id="history-list"></div>
+        </div>
+      </div>
+
+      <div id="settings-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="settings-close-btn">&times;</span>
+          <h2>Cài đặt tài khoản</h2>
+          <form id="settings-form" class="settings-form">
+            <label>Số điện thoại
+              <input type="tel" id="settings-phone" name="phone" placeholder="Nhập số điện thoại" />
+            </label>
+            <label>Số nhà / thôn / ngõ
+              <input type="text" id="settings-house-number" name="houseNumber" placeholder="Ví dụ: Số 12, ngõ 45" />
+            </label>
+            <label>Xã
+              <select id="settings-commune" name="commune" required>
+                <option value="">Chọn xã</option>
+                <option value="Thạch Hòa">Thạch Hòa</option>
+                <option value="Tân Xã">Tân Xã</option>
+                <option value="Bình Yên">Bình Yên</option>
+                <option value="Khác">Khác</option>
+              </select>
+            </label>
+            <label id="settings-other-commune-wrap" class="hidden">Xã khác
+              <input type="text" id="settings-other-commune" placeholder="Nhập tên xã" />
+            </label>
+            <div class="settings-actions">
+              <button class="btn primary" id="save-settings-btn" type="submit">Lưu cài đặt</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="checkout-close-btn">&times;</span>
+          <h2>Xác nhận thanh toán</h2>
+          <div id="checkout-summary-list"></div>
+          <p class="checkout-total">Phí ship: <strong id="checkout-shipping-fee">0 VND</strong></p>
+          <p class="checkout-total">Tổng tiền: <strong id="checkout-total-price">0 VND</strong></p>
+          <form id="checkout-form" class="settings-form">
+            <label>Số điện thoại
+              <input type="tel" id="checkout-phone" required placeholder="Nhập số điện thoại" />
+            </label>
+            <label>Số nhà / thôn / ngõ
+              <input type="text" id="checkout-house-number" required placeholder="Ví dụ: Số 12, ngõ 45" />
+            </label>
+            <label>Xã
+              <select id="checkout-commune" required>
+                <option value="">Chọn xã</option>
+                <option value="Thạch Hòa">Thạch Hòa</option>
+                <option value="Tân Xã">Tân Xã</option>
+                <option value="Bình Yên">Bình Yên</option>
+                <option value="Khác">Khác</option>
+              </select>
+            </label>
+            <label id="checkout-other-commune-wrap" class="hidden">Xã khác
+              <input type="text" id="checkout-other-commune" placeholder="Nhập tên xã" />
+            </label>
+            <label>Ghi chú
+              <textarea id="checkout-note" rows="3" placeholder="Ví dụ: giao sau 18h..."></textarea>
+            </label>
+
+            <div id="lovebox-recipient-fields" class="hidden">
+              <label>Họ tên người nhận (Love Box)
+                <input type="text" id="recipient-name" placeholder="Nhập họ tên người nhận" />
+              </label>
+              <label>Số điện thoại người nhận (Love Box)
+                <input type="tel" id="recipient-phone" placeholder="Nhập số điện thoại người nhận" />
+              </label>
+              <label>Địa chỉ người nhận (Love Box)
+                <input type="text" id="recipient-address" placeholder="Nhập địa chỉ người nhận" />
+              </label>
+            </div>
+
+            <p class="service-note">Gói dịch vụ QR ngẫu nhiên/custom: +5.000 VND mỗi combo.</p>
+            <div class="settings-actions">
+              <button class="btn primary" id="checkout-submit-btn" type="submit">Xác nhận thanh toán</button>
+            </div>
+          </form>
+
+          <div id="payment-qr-section" class="payment-qr-section hidden">
+            <h3>QR thanh toán</h3>
+            <p>Số tiền cần thanh toán: <strong id="qr-total-price">0 VND</strong></p>
+            <img id="payment-qr-image" alt="QR thanh toán" />
+            <a class="btn primary" id="send-bill-btn" href="https://web.facebook.com/messages/t/943941925474315" target="_blank" rel="noopener noreferrer">Gửi bill qua Messenger</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="menu-detail-modal" class="modal">
+        <div class="modal-content menu-detail-content">
+          <span class="close-btn" id="menu-detail-close-btn">&times;</span>
+          <h2 id="menu-detail-title">Chi tiết món ăn</h2>
+          <div id="menu-detail-body"></div>
+        </div>
+      </div>
+
+      <div id="qr-reveal-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="qr-reveal-close-btn">&times;</span>
+          <h2 id="qr-reveal-title">Lời nhắn dành cho bạn</h2>
+          <p id="qr-reveal-message"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h4>Về chúng tôi</h4>
+        <p>CookTrust - Healthy & Eat Clean Food là dự án ẩm thực lành mạnh dành cho sinh viên và người đi làm trẻ tại Hòa Lạc.</p>
+        <p>Gmail: cooktrusteatcleanfood@gmail.com</p>
+        <p>Fanpage: <a href="https://www.facebook.com/profile.php?id=61586588653121" target="_blank">CookTrust - Healthy & Eat Clean Food</a></p>
+        <p>Tiktok: <a href="https://www.tiktok.com/@cooktrust4" target="_blank">@cooktrust4</a></p>
+        <p>Admin: <a href="/admin_dashboard" target="_blank">admin_dashboard</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+  <script src="./js/animation.js"></script>
+  <script type="module" src="./js/auth.js"></script>
 </body>
-
 </html>

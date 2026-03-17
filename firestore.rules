@@ -1,0 +1,54 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn()
+        && request.auth.token.email != null
+        && request.auth.token.email in [
+          "anhntkhe182290@fpt.edu.vn",
+          "cooktrusteatcleanfood@gmail.com"
+        ];
+    }
+
+    // Hồ sơ user: chỉ chính user đó đọc/ghi
+    match /users/{uid} {
+      allow read, write: if isSignedIn() && request.auth.uid == uid;
+
+      // users/{uid}/orders: user chỉ xem/ghi đơn của chính mình
+      match /orders/{orderId} {
+        allow read, create: if isSignedIn() && request.auth.uid == uid;
+        allow update, delete: if false;
+      }
+    }
+
+    // Collection tổng hợp cho admin theo dõi đơn
+    // - User đã đăng nhập được create (luồng checkout hiện tại cần ghi)
+    // - Chỉ admin được read/update/delete
+    match /orders/{orderId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Token QR để reveal message
+    // - User đã đăng nhập được create (luồng checkout hiện tại cần ghi)
+    // - Chỉ admin được đọc trong dashboard
+    // - Trang reveal đọc theo token sẽ không dùng query list, chỉ get doc id
+    //   nên cho phép read nếu biết đúng token
+    match /qr_codes/{token} {
+      allow create: if isSignedIn();
+      allow get: if true;
+      allow list: if isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // Mặc định chặn tất cả
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

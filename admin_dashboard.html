@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CookTrust</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f7f3; margin: 0; color: #1f2d1f; }
+        .wrap { max-width: 1100px; margin: 24px auto; padding: 0 16px 40px; }
+        .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .card { background: #fff; border: 1px solid #d9e3d6; border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+        .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .btn { border: 0; background: #3e613a; color: #fff; border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+        .btn.outline { background: #fff; color: #2e4d2a; border: 1px solid #9bb39a; }
+        .muted { color: #5b6f5a; font-size: 14px; }
+        .item { border: 1px dashed #c8d4c4; border-radius: 10px; padding: 10px; margin-top: 8px; }
+        .qr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 8px; }
+        .qr-box { border: 1px solid #d6e1d3; border-radius: 10px; padding: 10px; background: #fbfdfb; }
+        .qr-box img { width: 180px; height: 180px; object-fit: contain; display: block; margin: 6px auto; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="top">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p class="muted">Theo dõi đơn hàng và in QR cho từng hộp cơm</p>
+            </div>
+            <div class="row">
+                <button id="login-btn" class="btn">Đăng nhập Google</button>
+                <button id="refresh-btn" class="btn outline hidden">Tải lại</button>
+                <button id="logout-btn" class="btn outline hidden">Đăng xuất</button>
+            </div>
+        </div>
+
+        <div id="auth-note" class="card">Vui lòng đăng nhập tài khoản admin để xem dữ liệu.</div>
+        <div id="orders-root" class="hidden"></div>
+    </div>
+
+    <script type="module" src="./js/admin_dashboard.js"></script>
+</body>
+</html>
+
